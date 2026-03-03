@@ -2,6 +2,7 @@ import { join } from 'path'; //node
 
 import { Module } from '@nestjs/common';
 import { ServeStaticModule } from '@nestjs/serve-static';
+import { PokemonModule } from './pokemon/pokemon.module';
 
 
 
@@ -9,7 +10,8 @@ import { ServeStaticModule } from '@nestjs/serve-static';
   imports: [
     ServeStaticModule.forRoot({
       rootPath: join(__dirname, '..', 'public'),
-    })
+    }),
+    PokemonModule
   ],
 })
 export class AppModule {}
